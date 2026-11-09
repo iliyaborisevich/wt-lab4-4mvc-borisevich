@@ -1,0 +1,20 @@
+@model wt_lab4_4mvc_borisevich.Models.Car
+
+@{
+    ViewData["Title"] = "Информация об авто";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm rounded-4 col-md-8 mx-auto">
+        <div class="card-body">
+            <h2 class="mb-4">@Model.Brand @Model.Model</h2>
+            <ul class="list-group list-group-flush mb-4">
+                <li class="list-group-item"><strong>ID:</strong> @Model.Id</li>
+                <li class="list-group-item"><strong>Год выпуска:</strong> @Model.Year</li>
+                <li class="list-group-item"><strong>Цена за день:</strong> @Model.PricePerDay BYN</li>
+                <li class="list-group-item"><strong>Статус:</strong> @(Model.IsAvailable ? "Доступен" : "В аренде")</li>
+            </ul>
+            <a asp-action="Index" class="btn btn-secondary">Назад к списку</a>
+        </div>
+    </div>
+</div>
